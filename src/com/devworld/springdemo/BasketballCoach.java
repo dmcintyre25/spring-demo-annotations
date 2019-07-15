@@ -11,4 +11,10 @@ public class BasketballCoach implements Coach {
 		return "Shoot 100 freethrows";
 	}
 
+	@Override
+	public String getDailyFortune() {
+	
+		return "testing 2";
+	}
+
 }
