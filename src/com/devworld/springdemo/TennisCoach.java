@@ -1,11 +1,15 @@
 package com.devworld.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 	
+	// Field Injection
+	@Autowired
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	//Constructor Injection
@@ -20,10 +24,17 @@ public class TennisCoach implements Coach {
 	}
 	
 	// Setter Injection
-	@Autowired
-	public void setFortuneService(FortuneService theFortuneService) {
-		fortuneService = theFortuneService;
-	}
+	/*
+	 * @Autowired public void setFortuneService(FortuneService theFortuneService) {
+	 * fortuneService = theFortuneService; }
+	 */
+	
+	// Method Injection	
+	/*
+	 * @Autowired public void doCrazyStuff(FortuneService theFortuneService) {
+	 * fortuneService = theFortuneService; }
+	 */
+	
 	
 	
 	@Override
